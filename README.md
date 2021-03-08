@@ -5,3 +5,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 npm run dev
 
+https://github.com/fireship-io/next-firebase-course
