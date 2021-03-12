@@ -1,6 +1,6 @@
 import UserProfile from '../../components/UserProfile'
 import PostFeed from '../../components/PostFeed'
-import { getUserWithUsername } from '../../lib/firebase'
+import { getUserWithUsername, postToJSON } from '../../lib/firebase'
 
 
 export async function  getServerSideProps({ query }) {
@@ -35,17 +35,4 @@ export default function UserProfilePage({ user, posts }) {
             <PostFeed posts={posts} />
         </main>
     )
-}
-
-/**
- * Convert a firestore document to JSON
- * @param {DocumentSnapshot} doc
- */
-export function postToJSON(doc) {
-    const data = doc.data()
-    return {
-        ...data,
-        createdAt: data.createdAt.toMillis(),
-        updatedAt: data.updatedAt.toMillis(),
-    }
 }
